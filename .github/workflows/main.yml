@@ -50,6 +50,7 @@ jobs:
       - name: Deliver project build to azure
         uses: bacongobbler/azure-blob-storage-upload@v1.2.0
         with:
+          source_dir: '.'
           container_name: '$web'
           connection_string: ${{ secrets.AZURE_CONNECTION_STRING }}
           sync: true
