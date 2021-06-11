@@ -1,0 +1,54 @@
+board:
+  questions-done: 'in a moment we will give you the results of your test'
+  done: 'done'
+
+pause-menu:
+  configuration: 'configuration'
+  information: 'information'
+  reset: 'reset game'
+  quit: 'quit game'
+  help: 'Help Menu'
+
+results:
+  score: 'your score'
+  answer: 'your answer'
+  meaning: 'What does it mean?'
+
+  find-help: 'Find Help'
+  find-help-header: 'Learn about how to find medical support'
+  find-help-description: 'Depending on where you live the protocol to get mental health support may vary. Please select one of the available countries in which already offer support to know the way you have to follow to find help.'
+  steps: 'Step'
+  description: 'Description'
+  observations: 'Observations'
+  find: 'find'
+  assessment-reminder-header: 'Get your pre-assesment results for a more efficient diagnosis'
+  assessment-reminder-description: 'This pre-assesment score can be downloaded and printed as a report that you can hand in to your specialist. It will help them give you a more efficient and accurate diagnostic about your condition.'
+  download-report: 'download report'
+
+  learn-more: 'Learn more'
+  learn-more-header: 'Learn more about anxiety in Corona times'
+  learn-more-description: 'We want you to help you understand what anxiety is and how to deal with it. For that we have prepare a collection of useful articles and external reference that can help you comprehend this common mental condition and deal better with it.'
+  learn-more-region-header: 'Discover more about anxiety and mental health support in your region'
+  learn-more-region-description: 'You can also find relevant information about mental conditions and how to find help in the official website of the different mental institutions of your country. Please select your region to find useful official references to know more about anxiety.'
+
+  your-score: 'This is your score'
+  score-how-to: 'How do we calculate your score?'
+  score-how-to-description: 'Your score is the result of the answers you selected for each card. We compute each one of these answers and generate a global score that determines what is your level of anxiety.'
+  total-score: 'Total Score'
+  assessment: 'Assesment'
+  score-word: 'Score'
+  answer-word: 'Answer'
+  score-details-header: 'You can find more detailed information about your answers and scores in here:'
+  score-details-description: 'You can use these results to find professional assistance. By providing this pre-assesment to your psychologist he can already know what is your condition and help you with it. Feel free to download the PDF version of your test and contact your nearest specialist to find help.'
+
+  options: 'Here are some things you can do to improve'
+  check-score: 'Check your score'
+  check-score-description: 'Learn more about your test score and the meaning of the questions.'
+  learn-more-about: 'Learn more about Anxiety'
+  learn-more-about-description: 'Discover articles and blogs that will help you know more about your mental health.'
+  find-medical-help: 'Find Help'
+  find-medical-help-description: 'Learn how to get professional support in your region and native language.'
+  feedback: 'Help us improve'
+  feedback-description: 'Share your game experience with us, let us know what can be do to make it better.'
+
+  points: 'Your Reward'

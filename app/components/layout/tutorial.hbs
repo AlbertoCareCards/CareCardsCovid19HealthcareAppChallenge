@@ -1,0 +1,15 @@
+<div id="laxScrollParent" class="mind-cover-window {{styleNamespace}}"
+     {{did-insert this.loadDom}}>
+  <div id="laxScrollChild">
+    <Common::Lax>
+      <Tutorial::Views::Welcome @initialStep={{0}}/>
+      <Tutorial::Views::DesktopGameplay @initialStep={{1}}/>
+      <Tutorial::Views::PhoneGameplay @initialStep={{1}}/>
+    </Common::Lax>
+  </div>
+
+  <Tutorial::Navbar::Navbar @deck={{deck}}
+                            @language={{@language}}
+                            @achievements={{achievements}}
+                            @selectLanguage={{@selectLanguage}}/>
+</div>

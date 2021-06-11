@@ -1,0 +1,31 @@
+<div class="mind-flex-space-between {{styleNamespace}}">
+  <div class="mind-flex-center">
+    <button class="mind-button"  {{on "click" this.toggleRewardsModal}}>
+      <FaIcon @icon="award"/>
+    </button>
+    <p class="mind-button-typography">Rewards</p>
+  </div>
+
+  <div class="mind-flex-center">
+    <Common::Dropdown @options={{options}}
+                      @initialSelection={{selectedLanguage}}
+                      @onChangeCallback={{this.changeLanguage}}
+                      @placeholder="common.select-language"/>
+    <button class="mind-button" {{on "click" this.toggleModal}}>
+      <FaIcon @icon="info-circle"/>
+    </button>
+  </div>
+</div>
+
+<Common::Modal @parent={{this}}
+               @plug="modal">
+  <Tutorial::Navbar::ModalMenu @modal={{this.modal}}
+                               @deck={{@deck}}/>
+</Common::Modal>
+
+<Common::Modal @parent={{this}}
+               @plug="rewardsModal">
+  <Tutorial::Navbar::RewardsMenu @modal={{this.rewardsModal}}
+                                 @achievements={{achievements}}
+                                 @deck={{@deck}}/>
+</Common::Modal>

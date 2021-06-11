@@ -1,0 +1,19 @@
+<div id="{{this.card.id}}" class="mind-swing-card {{styleNamespace}} {{if this.backSide "mind-disabled"}}"
+     {{on "touchend" this.dropCard}}
+     {{on "touchstart" this.liftCard}}>
+  <div {{did-insert this.loadDom}}
+       {{did-update this.flipCardOnPositionUpdate this.position}}>
+    <div class="mind-back-card" style="background: url('assets/images/game/card-background.png')"></div>
+    <div class="mind-front-card" style="background: url('assets/images/game/{{this.card.image}}.jpg') no-repeat center">
+      <p>{{this.card.question}}</p>
+    </div>
+  </div>
+
+  <!-- PHONE ANSWER DISPLAY OVERLAY -->
+  {{#if (and (not backSide) (eq position 0))}}
+    <Game::Board::Phone::Answers
+            @answers={{@answers}}
+            @playedCards={{@playedCards}}
+            @selectedAnswer={{@selectedAnswer}}/>
+  {{/if}}
+</div>

@@ -1,0 +1,30 @@
+& {
+  @extend .mind-gameplay-wrapper;
+
+  @media (max-width: phone-width-breakpoint()) {
+    visibility: hidden;
+  }
+
+  // Logic to hide underlying card under centered card
+  .mind-tutorial-card {
+    z-index: 1000;
+  }
+
+  .mind-tutorial-card + .mind-tutorial-card {
+    position: absolute;
+    margin: 0;
+    z-index: 0;
+  }
+
+  // Skip tutorial buttons
+  > div:last-child {
+    padding: 30px;
+    position: absolute;
+    width: calc(100vw - 60px);
+    bottom: 0;
+
+    > h2 > *:last-child {
+      margin-left: 10px;
+    }
+  }
+}

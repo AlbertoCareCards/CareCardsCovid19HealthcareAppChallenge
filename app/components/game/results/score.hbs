@@ -1,0 +1,40 @@
+<div class="mind-result {{styleNamespace}}">
+  <img src="assets/images/game/results/normal.jpg">
+
+  <h1 class="mind-big-text">{{result.header}}</h1>
+
+  {{#each result.content as |content|}}
+    <p class="mind-text">{{content}}</p>
+  {{/each}}
+
+  <hr>
+
+  <FaIcon @icon="award"/>
+
+  <h2 class="mind-semi-big-text">
+    Follow Ups & Rewards
+  </h2>
+
+  <p class="mind-text">
+    Congratulations! By finishing the game you completed your first achievement and unlocked
+    the follow up achievements.
+  </p>
+
+  <p class="mind-text">
+    The follow ups are a set of complementary resources customized to your need that will help you
+    to better understand the results of the test and your state of mind. Each follow up has its own
+    achievement. If you want to learn more about Corona anxiety, find support and gather more points
+    select any of the available follow up resources:
+  </p>
+
+  {{#each achievements as |achievement|}}
+    <Common::Reward::Achievement @id={{achievement.id}}
+                                 @unlocked={{achievement.unlocked}}
+                                 @completed={{achievement.completed}}
+                                 @icon={{achievement.icon}}
+                                 @title={{achievement.title}}
+                                 @description={{achievement.description}}
+                                 @points={{achievement.points}}
+                                 @action={{changeSection}}/>
+  {{/each}}
+</div>

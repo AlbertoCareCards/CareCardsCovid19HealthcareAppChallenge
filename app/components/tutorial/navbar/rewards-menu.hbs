@@ -1,0 +1,24 @@
+<div class="mind-game-modal {{styleNamespace}}">
+  <!-- HEADER -->
+  <div class="mind-flex-space-between">
+    <h1 class='mind-modal-logo'>
+      <p><img src="assets/images/common/illness-logo.png">Coronavirus</p>
+      {{t "welcome.header"}} <span>{{t "welcome.depression"}}</span>
+      <p><a href="mailto:info@care-cards.io"  rel='noopener noreferrer' target='_blank'>by CareCards</a></p>
+    </h1>
+
+    <div>
+      <button class="mind-button" {{on "click" this.closeModal}}>
+        <FaIcon @icon="times"/>
+      </button>
+    </div>
+  </div>
+
+  <!-- REWARDS INFORMATION -->
+  <Tutorial::Navbar::Rewards::Introduction @modal={{modal}}
+                                           @achievements={{achievements}}/>
+
+  <!-- NAVIGATION OPTIONS -->
+  <div>
+  </div>
+</div>

@@ -1,0 +1,11 @@
+@function tablet-width-breakpoint() {
+  @return map-get($width-breakpoints, 'phone')
+}
+
+@function phone-width-breakpoint() {
+  @return map-get($width-breakpoints, 'phone')
+}
+
+@function small-phone-width-breakpoint() {
+  @return map-get($width-breakpoints, 'small-phone')
+}

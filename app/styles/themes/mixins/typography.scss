@@ -1,0 +1,15 @@
+@function get-font-family($key: 'primary') {
+  @return map-get($font-families, $key);
+}
+
+@function get-font-size($key: 'normal') {
+  @return map-get($font-sizes, $key);
+}
+
+@function get-font-weight($key: 'normal') {
+  @return map-get($font-weights, $key);
+}
+
+@function get-line-heights($key: 'normal') {
+  @return map-get($line-heights, $key);
+}

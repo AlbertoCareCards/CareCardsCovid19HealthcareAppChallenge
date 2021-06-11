@@ -1,0 +1,63 @@
+<div class="mind-game-modal {{styleNamespace}}">
+  <!-- HEADER -->
+  <div class="mind-flex-space-between">
+  </div>
+
+  <!-- RESULTS INFORMATION -->
+  <div>
+    {{#if (and score result)}}
+      <Common::Carousel @parent={{this}}
+                        @swipe={{false}}
+                        @accessibility={{false}}
+                        @reference="carousel">
+        <Game::Results::Score @score={{this.score}}
+                              @result={{this.result}}
+                              @achievements={{achievements}}
+                              @changeSection={{action this.changeSection}}/>
+        <Game::Results::Report @deck={{@deck}}
+                               @score={{this.score}}
+                               @options={{this.languages}}
+                               @returnToMenu={{action this.completeFollowUp}}
+                               @selectedLanguage={{this.selectedLanguage}}
+                               @playedCards={{this.playedCards}}
+                               @selectLanguage={{action this.selectLanguage}}/>
+        <Game::Results::LearnMore @deck={{@deck}}
+                                  @options={{this.languages}}
+                                  @selectedLanguage={{this.selectedLanguage}}
+                                  @selectLanguage={{action this.selectLanguage}}
+                                  @selectedCountry={{this.selectedCountry}}
+                                  @returnToMenu={{action this.completeFollowUp}}
+                                  @selectCountry={{action this.selectCountry}}/>
+        <Game::Results::DoctorSearch @deck={{@deck}}
+                                     @options={{this.languages}}
+                                     @selectedLanguage={{this.selectedLanguage}}
+                                     @selectLanguage={{action this.selectLanguage}}
+                                     @selectedCountry={{this.selectedCountry}}
+                                     @returnToMenu={{action this.completeFollowUp}}
+                                     @selectCountry={{action this.selectCountry}}/>
+        <Game::Results::Reward @achievements={{achievements}}
+                               @prizesBasket={{prizesBasket}}
+                               @togglePrize={{this.togglePrize}}
+                               @loadWallet={{loadWallet}}
+                               @prizes={{prizes}}
+                               @wallet={{wallet}}/>
+      </Common::Carousel>
+    {{/if}}
+  </div>
+
+  <!-- NAVIGATION OPTIONS -->
+  <div>
+    <hr>
+    {{#if (eq section "4")}}
+      <button class="mind-button mind-small-text" {{on "click" (fn changeSection "0")}}>
+        back to results
+      </button>
+    {{else}}
+      <button class="mind-button mind-small-text" {{on "click" (fn changeSection "4")}}>
+        obtain your rewards
+      </button>
+    {{/if}}
+    <p class="mind-disclaimer">{{deck.disclaimer}}</p>
+    <p class="mind-disclaimer">{{t "common.test-by"}}: <b><a href="{{deck.original.url}}" target="_blank">{{deck.original.bibliography}}</a></b></p>
+  </div>
+</div>

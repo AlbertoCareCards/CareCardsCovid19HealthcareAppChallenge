@@ -1,0 +1,23 @@
+<div class="mind-card-dimensions {{styleNamespace}}"
+     {{on "click" this.flipCard}}>
+  <div {{did-insert this.loadDom}}>
+    <div class="mind-front-card" style="background: url('assets/images/game/{{this.card.image}}.jpg') no-repeat center">
+      <section>
+        <div class="mind-cah-border">
+          <p class="mind-text"><i>{{t "results.score"}}</i>: {{card.value.score}}</p>
+          <p class="mind-text"><i>{{t "results.answer"}}</i>: {{card.value.answer}}</p>
+        </div>
+
+        <button class="mind-button">
+          <FaIcon @icon="info-circle"/>
+        </button>
+      </section>
+
+      <p>{{this.card.question}} </p>
+    </div>
+    <div class="mind-back-card mind-flex-center">
+      <h2 class="mind-text">{{t "results.meaning"}}</h2>
+      <p class="mind-small-text">{{card.clarification}}</p>
+    </div>
+  </div>
+</div>

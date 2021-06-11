@@ -1,0 +1,58 @@
+& {
+  .mind-help-step {
+    display: none;
+  }
+
+  @media (max-width: phone-width-breakpoint()) {
+    // Step List Item
+    .mind-help-step {
+      display: flex;
+      flex-flow: row;
+      align-items: center;
+
+      // Index
+      > p {
+        margin-right: 20px;
+      }
+
+      // Description
+      > div {
+        flex: 1;
+
+        ol {
+          margin-left: 10px;
+          margin-top: 10px;
+
+          li + li {
+            margin-top: 5px;
+          }
+        }
+      }
+    }
+
+    .mind-help-step + .mind-help-step {
+      margin-top: 10px;
+      padding-top: 10px;
+      border-top: 2px solid get-color('black-s1');
+    }
+
+    table {
+      display: none;
+    }
+  }
+
+  // HCL Configuration
+  hcl-sdk {
+    --hcl-font-default-name: 'rubik';
+    --hcl-color-primary: #685bc7;
+    --hcl-color-secondary: get-color('black-s1');
+    --hcl-color-marker: #685bc7;
+    --hcl-color-marker_selected: #4dceb5;
+    --hcl-color-vote_up: #4dceb5;
+    --hcl-color-vote_down: #cb5735;
+    --hcl-color-view_bkg: white;
+    --hcl-color-list_bkg: #f6f3ed;
+    --hcl-color-card_border: grey;
+    --hcl-color-button_border: #685bc7;
+  }
+}

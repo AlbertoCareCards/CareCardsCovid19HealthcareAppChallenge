@@ -1,0 +1,49 @@
+& {
+  // HIDE BOARD ON PHONE DEVICE
+  @media (max-width: phone-width-breakpoint()) {
+    display: none !important;
+  }
+
+  > div {
+    flex: 1;
+    flex-flow: column;
+    height: 100%;
+    max-height: 100%;
+  }
+
+  // Left/Right Answer Columns
+  > div.mind-flex-center {
+    > * {
+      flex: 1;
+    }
+  }
+
+  // Middle Column
+  > div.mind-card-dimensions {
+    > div {
+      flex: 1;
+    }
+
+    // Deck Placeholder
+    > div.mind-card-dimensions {
+      flex: auto;
+      margin: auto;
+      flex-flow: column;
+
+      > svg {
+        font-size: 80px;
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  > h2 {
+    position: absolute;
+    bottom: 80px;
+    margin: auto;
+
+    > svg {
+      margin-right: 10px;
+    }
+  }
+}

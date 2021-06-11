@@ -1,0 +1,27 @@
+<div class="mind-tutorial-reward mind-flex-center {{styleNamespace}}">
+  <h2 class="mind-semi-big-text">
+    4. Get your Prizes
+  </h2>
+
+  <p class="mind-text">
+    Exchange your coins by awesome rewards. Check the available prizes and select
+    the ones you like. Confirm your selection to exchange your points for rewards.
+  </p>
+
+  {{#each prizes as |prize|}}
+    <Game::Results::Reward::Prize::PrizeItem
+            @prize={{prize}}
+            @basket={{prizesBasket}}
+            @icon={{prize.icon}}
+            @title={{prize.title}}
+            @description={{prize.description}}
+            @price={{prize.price}}
+            @togglePrize={{togglePrize}}/>
+  {{/each}}
+
+  {{#if (gt prizesBasket.length 0)}}
+    <button class="mind-button mind-small-text" {{on "click" this.confirmPrizeSelection}}>
+      Get prizes ({{prizesBasket.length}})
+    </button>
+  {{/if}}
+</div>

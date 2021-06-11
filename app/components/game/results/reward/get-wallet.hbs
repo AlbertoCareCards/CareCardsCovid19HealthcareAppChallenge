@@ -1,0 +1,29 @@
+<div class="mind-tutorial-reward mind-flex-center {{styleNamespace}}">
+  <h2 class="mind-semi-big-text">
+    2. Here is your new wallet
+  </h2>
+
+  <p class="mind-text">
+    Copy the code in the first field. Is the address from your wallet, don't lose it!
+    Then introduce a password for your wallet. Click on get wallet and you will get
+    your new wallet with all your coins.
+  </p>
+
+  <div class="mind-cah-border mind-wallet">
+    <div class="mind-flex-space-between">
+      <p class="mind-text">CareCoins Member <span class="mind-disclaimer">by CareCards</span></p>
+      <img src="assets/images/common/logo.png">
+    </div>
+    <div class="mind-form">
+      <p class="mind-small-text">Address: 0xIJWEIJR3212</p>
+      <div class="mind-field">
+        <Input @type="password"
+               @placeholder="Password"/>
+      </div>
+    </div>
+  </div>
+
+  <button class="mind-button mind-small-text" {{on "click" enterWallet}}>
+    Get new wallet with coins
+  </button>
+</div>

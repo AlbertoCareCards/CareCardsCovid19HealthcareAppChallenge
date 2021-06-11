@@ -1,0 +1,30 @@
+<div id="mind-phone-board" class="mind-cover-window mind-flex-center {{styleNamespace}}">
+  <!-- MENU DISPLAY -->
+  <div class="mind-flex-center">
+    <Game::Board::Phone::Question @topDeckCard={{this.topDeckCard}}/>
+  </div>
+
+  <!-- CARD DISPLAY -->
+  <div class="mind-card-dimensions mind-flex-center mind-board-answer-title">
+    <FaIcon @icon="hand-peace"/>
+    <p>{{t 'board.done'}}</p>
+  </div>
+
+  <!-- OPTIONS DISPLAY -->
+  <div class="mind-flex-center">
+    <div class="mind-flex-center {{if canRewind "mind-enabled" "mind-disabled"}}"
+         {{on "click" this.rewind}}>
+      <FaIcon @icon="backward"/>
+    </div>
+    <!-- ODD OPTION -->
+    {{#if this.oddAnswer}}
+      <div class="mind-flex-center" {{on "click" (fn this.playOddAnswer this.oddAnswer)}}>
+        <FaIcon @icon="times"/>
+        <p class="mind-small-text">{{oddAnswer.answer}}</p>
+      </div>
+    {{/if}}
+    <div class="mind-flex-center" {{on "click" this.openPauseMenu}}>
+      <FaIcon @icon="info-circle"/>
+    </div>
+  </div>
+</div>

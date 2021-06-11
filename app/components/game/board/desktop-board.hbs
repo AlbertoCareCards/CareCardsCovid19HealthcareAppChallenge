@@ -1,0 +1,37 @@
+<div id="mind-desktop-board" class="mind-cover-window mind-flex-center {{styleNamespace}}">
+  <!-- LEFT ANSWER COLUMN -->
+  <div class="mind-flex-center">
+    {{#each leftAnswers as |answer|}}
+      <Game::Board::Desktop::Answer @answer={{answer}}
+                                    @selectAnswer={{selectAnswer}}/>
+    {{/each}}
+  </div>
+
+  <!-- TOP ANSWER COLUMN & CARD DECK -->
+  <div class="mind-card-dimensions mind-flex-center">
+    <!-- ODD ANSWER -->
+    <div>
+      <Game::Board::Desktop::Answer @answer={{oddAnswer}}
+                                    @selectAnswer={{@selectAnswer}}/>
+    </div>
+
+    <!-- DECK PLACEHOLDER -->
+    <div class="mind-card-dimensions mind-flex-center mind-board-answer-title">
+      <FaIcon @icon="hand-peace"/>
+      <p>{{t 'board.done'}}</p>
+    </div>
+    <div></div>
+  </div>
+
+  <!-- RIGHT ANSWER COLUMN -->
+  <div class="mind-flex-center">
+    {{#each rightAnswers as |answer|}}
+      <Game::Board::Desktop::Answer @answer={{answer}}
+                                    @selectAnswer={{selectAnswer}}/>
+    {{/each}}
+  </div>
+
+  <h2 class="mind-button" {{on "click" this.openPauseMenu}}>
+    <FaIcon @icon="question-circle"/> <p>{{t "pause-menu.help"}}</p>
+  </h2>
+</div>

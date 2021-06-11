@@ -1,0 +1,62 @@
+<div {{did-insert this.finishGame}}>
+  {{#if gameMode}}
+    {{#if (eq gameMode "desktop")}}
+      <!-- DESKTOP BOARD -->
+      <Game::Board::DesktopBoard
+              @answers={{this.playedAnswers}}
+              @pauseGame={{action this.pauseGame}}
+              @selectAnswer={{action this.selectAnswer}}
+              @rewindLastPlayedCard={{action this.rewindLastPlayedCard}}/>
+    {{else}}
+      <!-- PHONE BOARD -->
+      <Game::Board::PhoneBoard
+              @cards={{this.playedCards}}
+              @answers={{this.playedAnswers}}
+              @pauseGame={{action this.pauseGame}}
+              @selectAnswer={{action this.selectAnswer}}
+              @discardTopDeckCard={{action this.discardTopDeckCard}}
+              @rewindLastPlayedCard={{action this.rewindLastPlayedCard}}/>
+    {{/if}}
+  {{/if}}
+
+  <!-- DECK -->
+  <Game::CardEngine::CardGame
+          @plug="cardEngine"
+          @parent={{this}}
+          @cards={{this.deck.cards}}
+          @playedCards={{this.playedCards}}
+          @answers={{this.playedAnswers}}
+          @selectedAnswer={{this.selectedAnswer}}
+          @canPlayCard={{action this.canPlayCard}}
+          @throwOutCallback={{action this.playCard}}
+          @throwInCallback={{action this.undoCard}}/>
+
+  <!-- RESULTS -->
+  <Common::Modal @plug="resultsModal"
+                 @parent={{this}}>
+    {{#if finished}}
+      <Game::Results::Results
+              @deck={{@deck}}
+              @wallet={{wallet}}
+              @prizes={{prizes}}
+              @prizesBasket={{prizesBasket}}
+              @achievements={{achievements}}
+              @modal={{this.resultsModal}}
+              @loadWallet={{loadWallet}}
+              @togglePrize={{this.togglePrize}}
+              @playedCards={{this.playedCards}}
+              @quitGame={{action this.quitGame}}
+              @resetGame={{action this.resetGame}}
+              @completeAchievement={{completeAchievement}}/>
+    {{/if}}
+  </Common::Modal>
+
+  <!-- PAUSE MENU -->
+  <Common::Modal @plug="pauseModal"
+                 @parent={{this}}>
+    <Game::PauseMenu::PauseMenu @deck={{@deck}}
+                                @modal={{this.pauseModal}}
+                                @quitGame={{action this.quitGame}}
+                                @resetGame={{action this.resetGame}}/>
+  </Common::Modal>
+</div>

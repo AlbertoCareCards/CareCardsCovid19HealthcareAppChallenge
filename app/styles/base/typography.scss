@@ -1,0 +1,90 @@
+// APPLICATION TYPOGRAPHIES
+// ------------------------
+@font-face {
+  font-family: 'Rubik';
+  src: url('fonts/rubik-regular.woff2') format('woff2'),
+  url('fonts/rubik-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// Welcome Page Title
+// ------------------
+.mind-big-title {
+  text-align: center;
+  font-weight: bold;
+  font-family: get-font-family('primary'), serif;
+  font-size: get-font-size('big-title');
+  line-height: get-line-heights('big');
+
+  span {
+    background: get-color('black');
+    color: get-color('white');
+    padding: 5px 8px;
+  }
+
+  @media (max-width: phone-width-breakpoint()) {
+    line-height: get-line-heights('phone-big');
+    font-size: get-font-size('phone-big-title');
+  }
+
+  @media (max-width: small-phone-width-breakpoint()) {
+    line-height: get-line-heights('phone-big');
+    font-size: get-font-size('small-phone-big-title');
+  }
+}
+
+.mind-button-typography {
+  font-weight: bold;
+  font-family: get-font-family('primary'), serif;
+  font-size: get-font-size('normal');
+
+  @media (max-width: phone-width-breakpoint()) {
+    font-size: get-font-size('phone-normal');
+  }
+}
+
+.mind-big-text {
+  font-family: get-font-family('primary'), serif;
+  font-size: get-font-size('big');
+
+  @media (max-width: phone-width-breakpoint()) {
+    font-size: get-font-size('phone-big');
+  }
+}
+
+.mind-semi-big-text {
+  font-family: get-font-family('primary'), serif;
+  font-size: get-font-size('semi-big');
+
+  @media (max-width: phone-width-breakpoint()) {
+    font-size: get-font-size('phone-semi-big');
+  }
+}
+
+.mind-text {
+  font-family: get-font-family('secondary'), serif;
+
+  @media (max-width: phone-width-breakpoint()) {
+    font-size: get-font-size('phone-normal');
+  }
+}
+
+.mind-small-text {
+  font-family: get-font-family('secondary'), serif;
+  font-size: get-font-size('small');
+
+  @media (max-width: phone-width-breakpoint()) {
+    font-size: get-font-size('phone-small');
+  }
+}
+
+.mind-disclaimer {
+  font-style: italic;
+  font-family: get-font-family('secondary'), serif;
+  font-size: get-font-size('small-phone-small');
+
+  @media (max-width: phone-width-breakpoint()) {
+    font-size: get-font-size('small-phone-tiny');
+  }
+}

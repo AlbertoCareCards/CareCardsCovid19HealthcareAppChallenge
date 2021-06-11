@@ -1,0 +1,53 @@
+& {
+  .mind-article-recommendation {
+    width: 80%;
+    margin: auto;
+    flex-flow: row;
+    padding: 10px 0;
+    cursor: pointer;
+
+    > * {
+      padding: 10px 20px;
+    }
+
+    > img {
+      width: 60px;
+    }
+
+    > div {
+      flex: 1;
+
+      > p + p {
+        margin-top: 5px;
+        color: get-color('black-s1');
+      }
+    }
+
+    > a, > a > svg {
+      font-size: 20px;
+      color: get-color('black-s1');
+    }
+
+    @media (max-width: phone-width-breakpoint()) {
+      width: 100%;
+      padding: 0;
+      margin: 0;
+
+      > * {
+        padding: 10px 10px;
+      }
+
+      > img {
+        height: 30px;
+      }
+
+      > svg {
+        font-size: 15px;
+      }
+    }
+  }
+
+  .mind-article-recommendation + .mind-article-recommendation {
+    border-top: 1px solid get-color('black-s1');
+  }
+}

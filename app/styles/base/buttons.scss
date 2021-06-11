@@ -1,0 +1,21 @@
+.mind-button {
+  @extend .mind-button-typography;
+  @extend .mind-flex-center;
+  @extend .mind-cah-border;
+  @extend .mind-flex-center;
+
+  background: get-color('primary');
+  color: get-color('black');
+  cursor: pointer;
+
+  padding: 0.75rem 1rem;
+  border-radius: 5px;
+
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+
+  &.mind-disabled {
+    opacity: 0.7;
+  }
+}

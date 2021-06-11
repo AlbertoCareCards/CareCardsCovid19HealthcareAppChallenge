@@ -1,0 +1,28 @@
+// Load Templating Logic
+// ---------------------
+@import './themes/module';
+
+// Load APP Global Styles
+// ----------------------
+@import './base/module';
+
+// Enable Component Styling
+// ------------------------
+@import 'pod-styles';
+
+// Enable PowerSelect
+// ------------------
+@import "ember-power-select";
+
+// Application Layouter Configuration
+// ----------------------------------
+.ember-application, body, html {
+  @extend .mind-cover-window;
+  background: get-color('primary');
+
+  // Storybook adjustment
+  &.sb-show-main {
+    padding: 0 !important;
+    width: 100% !important;
+  }
+}

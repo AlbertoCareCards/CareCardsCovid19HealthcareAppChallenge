@@ -1,0 +1,86 @@
+// Set of modal layouts
+// --------------------
+.mind-game-modal {
+  height: 80vh;
+  width: 700px;
+  max-width: 85vw;
+  background: get-color('white');
+  display: flex;
+  flex-flow: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+
+  @media (max-width: phone-width-breakpoint()) {
+    height: 85vh;
+  }
+
+  // Logo + Options
+  > div:first-child {
+    width: 100%;
+    margin-bottom: 10px;
+
+    // Logo
+    > h1 {
+      margin-bottom: 0;
+    }
+
+    // Options
+    > div {
+      display: flex;
+      flex-flow: row;
+
+      p {
+        font-weight: bold;
+        margin-left: 5px;
+      }
+
+      button + button {
+        margin-left: 15px;
+      }
+    }
+  }
+
+  // Content Information
+  > div:nth-child(2) {
+    flex: 1;
+    width: calc(100% - 40px);
+    max-height: 100%;
+    overflow-y: scroll;
+    padding: 0 20px;
+  }
+
+  // Footer: Disclaimer + Options
+  > div:last-child {
+    margin-top: 10px;
+    width: 100%;
+
+    > hr {
+      width: 100%;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+
+    > button {
+      margin: auto;
+    }
+
+    > div {
+      display: flex;
+      flex-flow: row;
+      justify-content: center;
+    }
+
+    > p {
+      margin-top: 10px;
+
+      & + p {
+        margin-top: 5px;
+      }
+    }
+
+    .mind-active {
+      color: get-color('white');
+      background: get-color('black-s1');
+    }
+  }
+}

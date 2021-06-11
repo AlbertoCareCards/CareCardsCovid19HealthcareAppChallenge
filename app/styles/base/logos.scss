@@ -1,0 +1,63 @@
+// APP Text Logos
+// --------------
+// Welcome Page Logo
+.mind-logo {
+  @extend .mind-big-title;
+  width: fit-content;
+
+  a {
+    color: get-color('black');
+  }
+
+  // Sub Header
+  p:first-child {
+    @extend .mind-flex-end;
+    flex-flow: column;
+    font-size: get-font-size('tiny');
+
+    img {
+      height: 25px;
+    }
+  }
+
+  // Footer
+  p:last-child {
+    font-size: get-font-size('mini');
+    text-decoration: underline;
+    text-align: end;
+  }
+
+  @media (max-width: phone-width-breakpoint()) {
+    max-width: 80%;
+  }
+
+  @media (max-width: small-phone-width-breakpoint()) {
+    max-width: 90%;
+  }
+}
+
+// Menu Logo
+.mind-modal-logo {
+  @extend .mind-logo;
+
+  margin-bottom: 30px;
+  font-size: 1em;
+  text-align: start;
+
+  p {
+    font-size: 0.4em;
+    text-align: start;
+    margin-bottom: 5px;
+  }
+
+  @media (max-width: phone-width-breakpoint()) {
+    p:first-child {
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    p:last-child {
+      text-align: start;
+    }
+  }
+}

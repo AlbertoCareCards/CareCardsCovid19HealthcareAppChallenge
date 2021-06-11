@@ -1,0 +1,38 @@
+// Common styles for board views
+// -----------------------------
+// Typography for answer titles
+.mind-board-answer-title {
+  @extend .mind-semi-big-text;
+
+  font-weight: bold;
+  text-transform: uppercase;
+  color: get-color('black-s2');
+}
+
+.mind-board-answer {
+  > div {
+    @extend .mind-answer-border;
+    @extend .mind-flex-center;
+    width: 25vw;
+    padding: 50px 0;
+    min-width: 300px;
+    max-width: 400px;
+
+    > p {
+      width: fit-content;
+      z-index: 1001;
+      padding: 10px 20px;
+      background: get-color('primary');
+      border-radius: get-common('answer-border-radius');
+    }
+  }
+
+  &:hover {
+    > div {
+      > p {
+        color: get-color('black-s1');
+        @extend .mind-cah-border;
+      }
+    }
+  }
+}

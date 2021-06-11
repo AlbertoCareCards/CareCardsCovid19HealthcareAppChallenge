@@ -1,0 +1,28 @@
+<div class="mind-tutorial-reward mind-flex-center {{styleNamespace}}">
+  <h2 class="mind-semi-big-text">
+    5. Introduce email to deliver prizes
+  </h2>
+
+  <p class="mind-text">
+    Give us a contact email address and in a couple of days you will get your prizes
+    (and don't worry, we won't save your data).
+  </p>
+
+  {{#if (not prizeSent)}}
+    <div class="mind-form">
+      <div class="mind-field">
+        <Input @type="text" @placeholder="contact e-mail" @value={{this.email}}/>
+      </div>
+    </div>
+  {{/if}}
+
+  {{#if prizesSent}}
+    <p class="mind-text">You will receive a mail from us soon with your prizes :)</p>
+  {{else}}
+    {{#if email}}
+      <button class="mind-button mind-small-text" {{on "click" this.sendEmail}}>
+        Send Prizes
+      </button>
+    {{/if}}
+  {{/if}}
+</div>

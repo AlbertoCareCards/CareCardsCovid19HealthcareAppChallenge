@@ -1,0 +1,47 @@
+<div class="{{styleNamespace}}">
+  {{#each selectedCountry.steps as |step index|}}
+    <div>
+      <div {{on 'click' this.toggleStep}} class="mind-step-header">
+        <p class="mind-text">{{index}}</p>
+        <p class=" mind-text">
+          {{step.description}}
+          {{#if (or step.findSpecialist (not (is-empty step.observations)))}}
+            <p class="mind-small-text">Click to expand information</p>
+          {{/if}}
+        </p>
+        {{#if (or step.findSpecialist (not (is-empty step.observations)))}}
+          <FaIcon @icon="caret-down"/>
+        {{/if}}
+      </div>
+      <div>
+        {{#each step.observations as |observation|}}
+          <p class="mind-small-text">
+            <FaIcon @icon="info-circle"/>
+            {{observation}}
+          </p>
+        {{/each}}
+        {{#if step.findSpecialist}}
+          <Game::Results::DoctorSearch::Locator @specialist={{selectedCountry.specialist}}/>
+
+          <p class="mind-small-text">
+            <FaIcon @icon="info-circle"/>
+            {{t "results.assessment-reminder-header"}}
+            <br><br>
+            {{t "results.assessment-reminder-description"}}
+          </p>
+
+          <div class="mind-options-wrapper">
+            <Common::Dropdown @options={{languageOptions}}
+                              @verticalPosition={{'above'}}
+                              @initialSelection={{selectedLanguage}}
+                              @onChangeCallback={{this.selectLanguage}}
+                              @placeholder="common.select-language"/>
+            <button class="mind-button {{if (not selectedLanguage) "mind-disabled"}}">
+              {{t "results.download-report"}}
+            </button>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  {{/each}}
+</div>

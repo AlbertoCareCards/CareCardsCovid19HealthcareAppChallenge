@@ -1,0 +1,20 @@
+welcome:
+  header: 'Cards against'
+  depression: 'Anxiety'
+  play: 'play swiping left or right'
+  tutorial: 'learn to play scrolling down'
+
+desktopGameplay:
+  intro: 'how to play'
+  leftAnswer: 'Yes'
+  rightAnswer: 'No'
+  oddAnswer: 'Maybe'
+  play: 'Swipe to play'
+  observeImage: '1. Observe the card'
+  readQuestion: '2. Read the question'
+  readAnswer: '3. Read the'
+  readAnswerSpan: 'answer'
+  drag: '4. Drag the card to your'
+  answer: 'answer'
+  selectDiscard: 'or select the "discard" answer'
+  repeat: 'repeat until playing all cards.'

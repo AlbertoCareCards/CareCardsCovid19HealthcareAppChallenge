@@ -1,0 +1,99 @@
+<div class="mind-results {{styleNamespace}}">
+  <FaIcon @icon="award"/>
+
+  <h1 class="mind-big-text">
+    Our Games come with <u>Rewards</u>
+  </h1>
+
+  <FaIcon @icon="coins"/>
+
+  <h1 class="mind-semi-big-text">
+    Mental Health + Cards = Game & Rewards
+  </h1>
+
+  <p class="mind-text">
+    Discover the <u>Reward System</u> from CareCards. A program where
+    you can learn about your mental state while playing a card game and
+    be rewarded for it.
+  </p>
+
+  <p class="mind-text">
+    By accomplishing achievements during gameplay you will be rewarded
+    with coins. These achievements will also unlock additional achievements
+    to pursue for greater scores. Complete all achievements to get an extra
+    bonus and access the top-tier rewards.
+  </p>
+
+  <FaIcon @icon="wallet"/>
+
+  <h1 class="mind-semi-big-text">
+    Anonymous & Secured
+  </h1>
+
+  <p class="mind-text">
+    Save your coins in your CareCard wallet, an anonymous and safe digital device
+    that will keep track of your progress and allow you to exchange your coins by
+    incredible prizes.
+  </p>
+
+  <FaIcon @icon="gift"/>
+
+  <h1 class="mind-semi-big-text">
+    Healthy Prizes
+  </h1>
+
+  <p class="mind-text">
+    Turn your digital coins into real rewards by exchanging them with any of our CareCard partners.
+  </p>
+
+  <p class="mind-text">
+    Here there are some of the available prizes:
+  </p>
+
+  <!-- AVAILABLE PRIZES -->
+  <div>
+    <Common::Carousel @swipe={{true}}
+                      @accessibility={{true}}
+                      @dots={{true}}>
+      <Tutorial::Navbar::Rewards::Prize @icon="tree"
+                                        @description="Meditation Courses"/>
+      <Tutorial::Navbar::Rewards::Prize @icon="ticket-alt"
+                                        @description="Amazon Coupons"/>
+      <Tutorial::Navbar::Rewards::Prize @icon="music"
+                                        @description="Music Subscriptions"/>
+      <Tutorial::Navbar::Rewards::Prize @icon="gifts"
+                                        @description="... and More"/>
+    </Common::Carousel>
+  </div>
+
+  <FaIcon @icon="wallet"/>
+
+  <h1 class="mind-semi-big-text">
+    How to get your coins?
+  </h1>
+
+  <p class="mind-text">
+    Play the game to complete your first achievement: finish a deck. After finishing it
+    you will be rewarded with coins and informed about new unlocked achievements to get.
+    Save your coins in your wallet o continue playing and using the app to increase your
+    score. Once done exchange your coins for prizes or save them for getting higher scores
+    in future games and then greater prizes!
+  </p>
+
+  <b class="mind-text">
+    <u>Current Achievements</u>
+  </b>
+
+  {{#each achievements as |achievement|}}
+    <Common::Reward::Achievement @unlocked={{achievement.unlocked}}
+                                 @completed={{achievement.completed}}
+                                 @icon={{achievement.icon}}
+                                 @title={{achievement.title}}
+                                 @description={{achievement.description}}
+                                 @points={{achievement.points}}/>
+  {{/each}}
+
+  <h2 {{on "click" this.closeModal}} class="mind-button">
+    Go for it!
+  </h2>
+</div>

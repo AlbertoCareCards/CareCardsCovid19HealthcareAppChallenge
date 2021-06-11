@@ -1,0 +1,20 @@
+welcome:
+  header: 'Cartas contra la'
+  depression: 'Ansiedad'
+  play: 'desliza hacia la izquierda/derecha para jugar'
+  tutorial: 'desliza hacia abajo para aprender a jugar'
+
+desktopGameplay:
+  intro: 'cómo jugar'
+  leftAnswer: 'Si'
+  rightAnswer: 'No'
+  oddAnswer: 'Quizás'
+  play: 'desliza para jugar'
+  observeImage: '1. Observa la carta'
+  readQuestion: '2. Lee la pregunta'
+  readAnswer: '3. Lee la'
+  readAnswerSpan: 'respuesta'
+  drag: '4. Arrastra la carta a tu'
+  answer: 'respuesta'
+  selectDiscard: 'o selecciona la respuesta de "descarte"'
+  repeat: 'repite hasta jugar todas las cartas.'

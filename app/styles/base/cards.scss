@@ -1,0 +1,151 @@
+/**
+ * Gameplay Cards
+ */
+// Mind Card Game Size
+.mind-card-dimensions {
+  height: 50vh;
+  min-height: 385px;
+  max-height: 470px;
+  width: calc(50vh * 0.7);
+  min-width: calc(385px * 0.7);
+  max-width: calc(470px * 0.7);
+
+  @media (max-width: phone-width-breakpoint()) {
+    max-height: calc(270px * 1.5) !important;
+    max-width: 270px !important;
+    height: calc(80vw * 1.5) !important;
+    width: 80vw !important;
+  }
+}
+
+// Mind card gameplay decoration
+.mind-card {
+  @extend .mind-card-dimensions;
+  background-size:     cover !important;
+  background-repeat:   no-repeat !important;
+  background-position: center center !important;
+
+  font-size: 100px;
+  border-radius: get-common('card-border-radius');
+  box-sizing: border-box;
+  border: 10px solid get-color('white');
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+
+  @media (max-width: phone-width-breakpoint()) {
+    border: 5px solid get-color('white');
+  }
+}
+
+.mind-card-textbox {
+  @extend .mind-text;
+  @extend .mind-flex-center;
+  @extend .mind-cah-border;
+
+  padding: 10px 5px 15px 5px;
+  font-size: 0.13em;
+  background: get-color('white');
+  text-align: center;
+
+  // Drag icon
+  > svg {
+    height: 35px;
+    width: auto;
+    background: white;
+    position: absolute;
+    bottom: -20px;
+    border-radius: 40px;
+    left: calc(50% - 20px);
+    border: 2px solid get-color('black');
+  }
+}
+
+// Game Card Back
+.mind-back-card {
+  @extend .mind-card;
+  border-color: get-color('white');
+}
+
+// Game Card Front
+.mind-front-card {
+  @extend .mind-card;
+  cursor: pointer;
+
+  // Text box
+  > p {
+    @extend .mind-card-textbox;
+
+    width: 84%;
+    position: absolute;
+    bottom: 30px;
+    left: calc(8% - 5px);
+
+    @media (max-width: phone-width-breakpoint()) {
+      display: none !important;
+    }
+  }
+
+  @media (min-width: phone-width-breakpoint()) {
+    > div {
+      display: none;
+    }
+  }
+
+  @media (max-width: phone-width-breakpoint()) {
+    > p {
+      display: none;
+    }
+  }
+}
+
+/**
+ * Tutorial Cards
+ */
+// Main tutorial card.
+.mind-tutorial-card {
+  @extend .mind-flex-center;
+  @extend .mind-cah-border;
+
+  flex-flow: column;
+  margin: 10px 40px;
+  border-width: 6px;
+  height: 400px;
+  width: 252px;
+  background: get-color('primary');
+
+  @media (max-width: phone-width-breakpoint()) {
+    height: 52vh;
+    margin: 5px 15px;
+    width: calc(52vh * 0.66);
+    max-height: 360px;
+    max-width: calc(360px * 0.66);
+  }
+
+  // All texts should be centered
+  * {
+    text-align: center;
+  }
+
+  // Question wrapper
+  .mind-cah-border {
+    width: 85%;
+    position: absolute;
+    bottom: 10%;
+    padding: 10px 5px 15px;
+  }
+
+  // Drag icon
+  .mind-drag {
+    font-size: 70px !important;
+    position: absolute;
+    bottom: -40px;
+    margin-left: 9px;
+  }
+
+  // Check icon
+  .mind-check {
+    font-size: 100px;
+    position: absolute;
+  }
+}
+
+

@@ -1,0 +1,23 @@
+<div class='mind-cover-window mind-flex-center  {{styleNamespace}}'>
+  <!-- HEADER -->
+  <h1 class='lax mind-logo'
+      data-lax-opacity={{lax-animator "fadeInOut" @initialStep}}
+      data-lax-translate-y={{lax-animator "translateYUp" @initialStep '0' '-40px'}}>
+    <p><img src="assets/images/common/illness-logo.png">Coronavirus</p>
+    {{t "welcome.header"}} <span>{{t "welcome.depression"}}</span>
+    <p><a href="mailto:info@care-cards.io"  rel='noopener noreferrer' target='_blank'>by CareCards</a></p>
+  </h1>
+
+  <!-- OPTIONS -->
+  <div class="lax {{if firstGame "mind-first-game"}}"
+       data-lax-opacity={{lax-animator "fadeInOut" @initialStep}}>
+    <h2 class="mind-button lax"
+        data-lax-translate-x={{lax-animator "translateLeftXOut" @initialStep}}>
+      {{t "welcome.play"}}
+    </h2>
+    <h2 class="mind-button lax"
+        data-lax-translate-x={{lax-animator "translateRightXOut" @initialStep}}>
+      {{t "welcome.tutorial"}}
+    </h2>
+  </div>
+</div>

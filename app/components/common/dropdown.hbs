@@ -1,0 +1,14 @@
+<div class={{styleNamespace}} {{on "click" this.toggle}}>
+  <PowerSelect @placeholder={{t this.placeholder}}
+               @tagName="div"
+               @renderInPlace={{true}}
+               @searchEnabled={{false}}
+               @options={{this.options}}
+               @selected={{this.selected}}
+               @searchField={{this.title}}
+               @registerAPI={{this.registerPowerSelect}}
+               @verticalPosition={{this.verticalPostion}}
+               @onChange={{selectItem}} as |option|>
+    {{option.title}}
+  </PowerSelect>
+</div>

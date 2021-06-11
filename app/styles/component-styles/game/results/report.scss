@@ -1,0 +1,61 @@
+& {
+  > h1:first-child p {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: phone-width-breakpoint()) {
+    h1 {
+      margin-bottom: 20px;
+    }
+  }
+
+  .mind-progress-bar {
+    height: 15px;
+    width: 100%;
+    margin-top: 5px;
+    background: get-color('white-s1');
+
+    > div {
+      height: 15px;
+      background: get-color('black-s2');
+    }
+  }
+
+  > hr + h2 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+
+  > h2 + table {
+    margin-bottom: 40px;
+  }
+
+  > table {
+    table-layout: fixed;
+  }
+
+  > table + table {
+    margin-bottom: 40px;
+  }
+
+  // Carousel
+  // Separation between slides.
+  .slick-slider {
+    margin-bottom: 60px;
+  }
+
+  .slick-slide {
+    margin: 0 15px;
+  }
+  .slick-list {
+    margin: 0 -10px;
+  }
+
+  // Carousel buttons
+  .slick-dots {
+    button::before {
+      font-size: 25px;
+    }
+  }
+}

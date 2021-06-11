@@ -1,0 +1,13 @@
+& {
+  height: 100%;
+  flex-flow: column;
+
+  > h2 {
+    max-width: 400px;
+    width: calc(100% - 38px);
+  }
+
+  > h2 + h2 {
+    margin-top: 10px;
+  }
+}

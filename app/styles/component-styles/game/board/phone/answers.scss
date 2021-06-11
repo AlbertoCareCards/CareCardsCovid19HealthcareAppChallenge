@@ -1,0 +1,66 @@
+& {
+  top: 0;
+  z-index: 1000;
+  position: absolute;
+
+  // Hide answers layer on every device but phones
+  @media (min-width: phone-width-breakpoint()) {
+    display: none !important;
+  }
+
+  > * > * + * {
+    margin-left: 5px;
+  }
+
+  // Selected answer
+  > div.mind-selected-answer {
+    top: 50px;
+  }
+
+  // Answer Positioning
+  > div {
+    height: 20px;
+    position: absolute;
+    padding: 2px 4px;
+    background: get-color('white');
+
+    &.mind-selected {
+      background: get-color('black-s1');
+      color: get-color('white');
+    }
+
+    // Left Answer
+    &:nth-child(1) {
+      left: 15px;
+    }
+
+    // Right Answer
+    &:nth-child(2) {
+      right: 15px;
+      flex-flow: row-reverse;
+
+      > * + * {
+        margin-right: 5px;
+        margin-left: 0;
+      }
+    }
+
+    // Top Answer
+    &:nth-child(3) {
+      top: 15px;
+    }
+
+    // Bottom Answer
+    &:nth-child(4) {
+      bottom: 15px;
+    }
+
+    &:last-child {
+      top: 15px;
+      left: 15px;
+      font-size: 20px;
+      height: 28px;
+      width: 28px;
+    }
+  }
+}

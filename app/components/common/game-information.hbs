@@ -1,0 +1,47 @@
+<div class="mind-flex-center {{styleNamespace}}">
+  <CpPanels @name="gameInformation" @accordion={{true}} as |panels|>
+    <panels.panel name="introduction" as |panel|>
+      <panel.toggle class="mind-button">
+        {{t "common.what-is-caa"}}
+      </panel.toggle>
+      <panel.body>
+        <p class="mind-text">{{t "common.what-is-caa-description-1"}}</p>
+        <p class="mind-text">{{t "common.what-is-caa-description-2"}}</p>
+        <p class="mind-text">{{t "common.what-is-caa-description-3"}}</p>
+      </panel.body>
+    </panels.panel>
+
+    <panels.panel name='about' as |panel|>
+      <panel.toggle  class="mind-button">
+        {{t "common.about-cc"}}
+      </panel.toggle>
+      <panel.body>
+        <p class="mind-text">{{t "common.about-cc-description-1"}}</p>
+        <p class="mind-text">{{t "common.about-cc-description-2"}}</p>
+      </panel.body>
+    </panels.panel>
+
+    <panels.panel name="legal" as |panel|>
+      <panel.toggle class="mind-button">
+        {{t "common.legal"}}
+      </panel.toggle>
+      <panel.body>
+        <p class="mind-text">{{t "common.legal-description-1"}}</p>
+        <p class="mind-text">{{t "common.legal-description-2"}}</p>
+      </panel.body>
+    </panels.panel>
+
+    <panels.panel name="contact" as |panel|>
+      <panel.toggle class="mind-button">
+        {{t "common.contact"}}
+      </panel.toggle>
+      <panel.body>
+        <div class="mind-contact mind-paper-border">
+          <img src="assets/images/common/logo-letters.png">
+          <p class="mind-button-typography"><FaIcon @icon="envelope"/> info@care-cards.io</p>
+          <p class="mind-button-typography"><FaIcon @icon="globe"/> <a href="care-cards.io" target="_blank">care-cards.io</a></p>
+        </div>
+      </panel.body>
+    </panels.panel>
+  </CpPanels>
+</div>

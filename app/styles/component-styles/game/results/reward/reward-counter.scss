@@ -1,0 +1,18 @@
+& {
+  padding: 10px;
+
+  > div + div {
+    margin-left: 10px;
+  }
+
+  > div > * + * {
+    margin-left: 5px;
+  }
+
+  p {
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: get-color('white');
+    background: get-color('black-s1');
+  }
+}

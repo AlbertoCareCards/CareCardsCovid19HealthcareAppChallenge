@@ -1,0 +1,61 @@
+<div class="mind-result {{styleNamespace}}">
+  <img src="assets/images/game/results/blog.jpg">
+
+  <h1 class="mind-big-text">{{t "results.learn-more"}}</h1>
+
+  <hr>
+
+  <h2 class="mind-semi-big-text">
+    {{t "results.learn-more-header"}}
+  </h2>
+
+  <p class="mind-text">
+    {{t "results.learn-more-description"}}
+  </p>
+
+  {{#each carecardsArticles as |article|}}
+    <div class="mind-article-recommendation mind-flex-center">
+      <img src="assets/images/common/logo.png">
+      <div>
+        <p class="mind-text"><b>{{article.title}}</b></p>
+        <p class="mind-text">{{article.description}}</p>
+      </div>
+      <FaIcon @icon="external-link-alt"/>
+    </div>
+  {{/each}}
+
+  <hr>
+
+  <h2 class="mind-semi-big-text">
+    {{t "results.learn-more-region-header"}}
+  </h2>
+
+  <p class="mind-text">
+    {{t "results.learn-more-region-description"}}
+  </p>
+
+  <div class="mind-options-wrapper">
+    <Common::Dropdown @options={{availableCountries}}
+                      @onChangeCallback={{this.selectCountry}}
+                      @placeholder="common.select-country"/>
+  </div>
+
+  {{#each selectedCountryArticles as |article|}}
+    <div class="mind-article-recommendation mind-flex-center">
+      <img src="assets/images/common/{{article.logo}}">
+      <div>
+        <p class="mind-text"><b>{{article.title}}</b></p>
+        <p class="mind-text">{{article.description}}</p>
+      </div>
+      <a href={{article.url}} target="_blank">
+        <FaIcon @icon="external-link-alt"/>
+      </a>
+    </div>
+  {{/each}}
+
+  <hr>
+
+  <button class="mind-button mind-small-text" {{on "click" returnToMenu}}>
+    back to follow ups
+  </button>
+</div>

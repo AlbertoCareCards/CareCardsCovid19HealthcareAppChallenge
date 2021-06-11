@@ -1,0 +1,89 @@
+// Form Styling
+// ------------
+// Form Partials
+// -------------
+.mind-form {
+  // Nested Association Options
+  // --------------------------
+  .mind-nested {
+    @extend .mind-flex-space-between;
+
+    justify-content: flex-start !important;
+    margin: 22px 0;
+
+    > div {
+      margin-left: 10px;
+    }
+  }
+
+  .mind-collection {
+    display: flex;
+    flex-flow: row;
+
+    > * + * {
+      margin-left: 22px;
+    }
+  }
+
+  // Form Field: Label + Input
+  // -------------------------
+  .mind-field, .mind-field > div {
+    width: 500px;
+    display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+    label {
+      @extend .mind-text;
+
+      margin-bottom: 6px;
+      color: get-color('secondary1');
+    }
+
+    input, select, textarea {
+      border: none;
+      width: 100%;
+      border-bottom: 2px solid get-color('black');
+      box-shadow: none;
+      background: get-color('p2-shade3');
+      padding: 8px 12px;
+    }
+  }
+
+  // Form Field Separation
+  .mind-field + .mind-field {
+    margin-top: 22px;
+  }
+
+  // Form Footer Actions
+  .mind-actions {
+    margin-top: 22px;
+  }
+}
+
+.mind-filter-form {
+  @extend .mind-form;
+  width: 95%;
+  margin: auto;
+  padding: 20px;
+
+  > p {
+    margin-bottom: 10px;
+  }
+
+  .mind-field {
+    @extend .mind-flex-center;
+    flex-flow: row;
+    width: fit-content;
+
+    > label {
+      margin-bottom: 0;
+      margin-right: 10px;
+    }
+
+    > *:last-child {
+      width: 200px;
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{{#if this.cards}}
+  <div {{did-insert this.initializeStack}}
+       class={{styleNamespace}}>
+    <div class="mind-card-dimensions stack">
+      {{!-- RE-RENDERS OF CARDS PROVOKE ISSUES ON GAME LOGIC    --}}
+      {{!-- TO AVOID IT WE RENDER CARDS INSTEAD OF PLAYERDCARDS --}}
+      {{#each this.cards as |card|}}
+        <Game::CardEngine::Card
+                @parent={{this}}
+                @plug={{concat "card" card.id}}
+                @card={{card}}
+                @answers={{@answers}}
+                @selectedAnswer={{@selectedAnswer}}
+                @playedCards={{this.playedCards}}/>
+      {{/each}}
+    </div>
+  </div>
+{{/if}}

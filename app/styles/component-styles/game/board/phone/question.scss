@@ -1,0 +1,24 @@
+& {
+  perspective: 1400px;
+
+  > div {
+    transform-style: preserve-3d;
+
+    > p {
+      max-height: 65%;
+      margin-top: 10px;
+      padding: 10px 20px;
+      text-align: center;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      width: calc(100% - 40px) !important;
+    }
+
+    > p:last-child {
+      transform: rotateX(180deg);
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+}

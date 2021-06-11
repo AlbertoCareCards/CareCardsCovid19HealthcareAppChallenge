@@ -1,0 +1,51 @@
+<div class="mind-result {{styleNamespace}}">
+  <h1 class="mind-big-text">{{t "results.points"}}</h1>
+
+  <FaIcon @icon="award"/>
+
+  <h2 class="mind-semi-big-text">
+    Get your Coins
+  </h2>
+
+  <p class="mind-text">
+    Thank you for playing our game. We are happy you made all the way here and
+    we want to reward you for it. Along your gameplay you have been completing
+    achievements and gathering coins. Now is time to save them.
+  </p>
+
+  <p class="mind-text">
+    Please follow the next instructions to save your coins in your current wallet.
+    If you don't have a wallet don't worry! We will give you one. Once coins are
+    saved you can exchange them by prizes, or just keep them until next time you play
+    for getting even more coins.
+  </p>
+
+  <p class="mind-text">
+    If there are still achievements to complete and you feel you want to go for the
+    high score no problem, click the menu button to come back to the game results and
+    keep completing the remaining goals.
+  </p>
+
+  <h2 class="mind-semi-big-text">
+    How to get your Coins?
+  </h2>
+
+  <Common::Carousel @parent={{this}}
+                    @swipe={{false}}
+                    @accessibility={{false}}
+                    @reference="carousel">
+    <Game::Results::Reward::EnterWallet @changeSection={{action this.changeSection}}
+                                        @loadWallet={{loadWallet}}/>
+    <Game::Results::Reward::GetWallet @changeSection={{action this.changeSection}}
+                                        @loadWallet={{loadWallet}}/>
+    <Game::Results::Reward::GetPrizes @changeSection={{action this.changeSection}}
+                                        @wallet={{wallet}}/>
+    <Game::Results::Reward::PrizesCatalogue @changeSection={{action this.changeSection}}
+                                            @wallet={{wallet}}
+                                            @prizes={{prizes}}
+                                            @prizesBasket={{prizesBasket}}
+                                            @togglePrize={{this.togglePrize}}
+                                            @changeSection={{action this.changeSection}}/>
+    <Game::Results::Reward::PayPrizes/>
+  </Common::Carousel>
+</div>

@@ -1,0 +1,33 @@
+& {
+  > div:first-child {
+    > div:last-child {
+      @media (max-width: phone-width-breakpoint()) {
+        flex-flow: column;
+      }
+
+      > * + * {
+        margin-left: 15px;
+      }
+    }
+  }
+
+  > div:nth-child(2) {
+    > div,
+    > div > .slick-list,
+    > div > .slick-list > .slick-track,
+    > div > .slick-list > .slick-track > .slick-slide,
+    > div > .slick-list > .slick-track > .slick-slide > div {
+      height: 100%;
+    }
+
+    > div > .slick-list > .slick-track > .slick-slide > div {
+      overflow-y: scroll;
+    }
+  }
+
+  > div:last-child {
+    button + button {
+      margin-left: 15px;
+    }
+  }
+}

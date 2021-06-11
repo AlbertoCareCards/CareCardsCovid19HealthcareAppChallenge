@@ -1,0 +1,18 @@
+<div class="mind-flex-space-between {{if completed "mind-completed"}} {{if (not unlocked) "mind-locked"}} {{styleNamespace}}"
+     {{on "click" callAction}}>
+  <FaIcon class="mind-cah-border" @icon="{{if completed "check" (if unlocked icon "lock")}}"/>
+  <hr>
+  <div class="mind-cah-border mind-flex-center">
+    <p class="mind-text">{{if unlocked title "Locked Achievement"}}</p>
+    <p class="mind-small-text">
+      {{if (not unlocked) howToUnlock description}}
+    </p>
+
+    {{#if unlocked}}
+      <div class="mind-flex-space-between">
+        <p class="mind-small-text">{{points}}CC</p>
+        <FaIcon @icon="coins"/>
+      </div>
+    {{/if}}
+  </div>
+</div>

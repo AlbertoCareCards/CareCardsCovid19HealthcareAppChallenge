@@ -1,0 +1,20 @@
+<Common::Carousel @parent={{this}}
+                  class={{styleNamespace}}
+                  @reference={{"carousel"}}
+                  @onSlideChange={{this.lockCarouselOnGameplayView}}>
+  <Layout::Tutorial @plug={{"tutorial"}}
+                    @parent={{this}}
+                    @deck={{@deck}}
+                    @achievements={{achievements}}
+                    @language={{@language}}
+                    @selectLanguage={{@selectLanguage}}/>
+  <Game::Game @deck={{@deck}}
+              @wallet={{wallet}}
+              @prizes={{prizes}}
+              @prizesBasket={{prizesBasket}}
+              @achievements={{achievements}}
+              @returnHome={{action this.returnHome}}
+              @loadWallet={{loadWallet}}
+              @togglePrize={{this.togglePrize}}
+              @completeAchievement={{this.completeAchievement}}/>
+</Common::Carousel>

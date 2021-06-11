@@ -1,0 +1,32 @@
+& {
+  padding: 30px;
+  position: absolute;
+  width: calc(100vw - 60px);
+  top: 0;
+
+  @media (max-width: phone-width-breakpoint()) {
+    padding: 15px;
+    width: calc(100vw - 30px);
+  }
+
+  > div:first-child {
+    justify-content: flex-start !important;
+
+    > p {
+      text-transform: uppercase;
+      margin-left: 10px;
+      max-width: 40%;
+    }
+  }
+
+  > div:last-child {
+    > * {
+      height: 52px;
+      min-width: 44px;
+    }
+
+    > * + * {
+      margin-left: 15px;
+    }
+  }
+}

@@ -1,0 +1,103 @@
+.mind-result {
+  overflow-x: hidden;
+
+  // Headers
+  > img:first-child {
+    width: 40%;
+    margin: auto;
+    margin-bottom: 30px;
+
+    @media (max-width: phone-width-breakpoint()) {
+      width: 60%;
+    }
+  }
+
+  > h1 {
+    width: fit-content;
+    max-width: 80%;
+    line-height: 1.2;
+    text-align: center;
+    margin: auto;
+    margin-bottom: 40px;
+
+    @media (max-width: phone-width-breakpoint()) {
+      max-width: 100%;
+    }
+
+    > p {
+      padding: 0 20px;
+    }
+  }
+
+  > h2 {
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  > p {
+    line-height: 1.4;
+    color: get-color('black-s1');
+    margin-bottom: 20px;
+  }
+
+  hr {
+    width: 60%;
+    margin: 40px auto;
+  }
+
+  > button {
+    margin: auto;
+  }
+
+  // Tables
+  > table {
+    margin: auto;
+    margin-bottom: 20px;
+    border-collapse: separate;
+    width: 100%;
+
+    // Adjusts table width to not go out of screen
+    @media (max-width: phone-width-breakpoint()) {
+      table-layout:fixed;
+    }
+
+    tr {
+      border: none;
+    }
+
+    th, td {
+      border: 1px solid get-color('black-s1');
+      text-align: center;
+      padding: 12px 20px;
+    }
+
+    @media (max-width: phone-width-breakpoint()) {
+      width: 100%;
+
+      th, td {
+        padding: 8px 12px;
+      }
+    }
+  }
+
+  // Options wrapper
+  > .mind-options-wrapper {
+    width: 60%;
+    margin: auto;
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    .ember-basic-dropdown-trigger {
+      width: calc(100% - 45px);
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+    }
+
+    @media (max-width: phone-width-breakpoint()) {
+      width: 100%;
+    }
+  }
+}

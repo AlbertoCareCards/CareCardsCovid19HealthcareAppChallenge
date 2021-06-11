@@ -1,0 +1,48 @@
+// Common styles for tutorial views
+// Many of the styles extend board view styles
+// -------------------------------------------
+// Lax Page View
+// -------------
+.mind-gameplay-wrapper {
+  @extend .mind-cover-window;
+  @extend .mind-flex-center;
+
+  flex-flow: column;
+  position: fixed;
+  bottom: 0;
+
+  // Avoids problems when scrolling in Lax
+  pointer-events: none;
+  * { pointer-events: none; }
+
+  // Vertical alignment of top and bottom texts
+  > h1 {
+    @extend .mind-flex-center;
+    flex: 1;
+    max-width: 90vw;
+    line-height: 1em;
+  }
+}
+
+// Left and Right answer piles
+// ---------------------------
+.mind-tutorial-pile {
+  @extend .mind-flex-center;
+  @extend .mind-board-answer;
+
+  height: 340px;
+  width: 204px;
+  padding: 0 15px;
+  flex-flow: column;
+
+  > * {
+    text-align: center;
+    max-width: 90%;
+  }
+
+  // answer description
+  > .mind-text {
+    position: absolute;
+    top: 70%;
+  }
+}

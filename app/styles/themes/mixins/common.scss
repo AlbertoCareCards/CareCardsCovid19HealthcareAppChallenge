@@ -1,0 +1,3 @@
+@function get-common($key: 'primary') {
+  @return map-get($common, $key);
+}

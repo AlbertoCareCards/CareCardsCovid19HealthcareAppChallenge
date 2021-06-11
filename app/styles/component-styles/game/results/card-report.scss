@@ -1,0 +1,89 @@
+& {
+  perspective: 1400px;
+  margin: 20px 0px;
+
+  &.mind-disabled {
+    pointer-events: none;
+  }
+
+  &.mind-dragging {
+    pointer-events: none;
+  }
+
+  // Display card answer in all screen sizes
+  .mind-front-card {
+    // Text box
+    > p {
+      @media (max-width: phone-width-breakpoint()) {
+        display: inline-block !important;
+      }
+    }
+  }
+
+  // Card Wrapper
+  > div:first-child {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+
+    > div {
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+    }
+
+    // Front card
+    > div:first-child {
+      > section, > p {
+        -webkit-backface-visibility: hidden;
+        backface-visibility: hidden;
+      }
+
+      > section {
+        margin-top: 20px;
+        display: flex;
+        flex-flow: row;
+        justify-content: center;
+        align-items: center;
+
+        > div {
+          padding: 5px 10px 8px 10px;
+          margin-right: 10px;
+          background: get-color('primary');
+        }
+
+        p + p {
+          margin-top: 2px;
+        }
+
+        button {
+          height: 100%;
+        }
+
+        svg, p {
+          font-size: 14px;
+        }
+      }
+    }
+
+    // Back card
+    > div:last-child {
+      transform: rotateY(180deg);
+      position: absolute;
+      left: 0;
+      top: 0;
+      background: get-color('primary') !important;
+      flex-flow: column;
+
+      > h2, p {
+        font-size: 0.16em;
+        text-align: center;
+        max-width: 85%;
+      }
+
+      > p {
+        margin-top: 20px;
+      }
+    }
+  }
+}

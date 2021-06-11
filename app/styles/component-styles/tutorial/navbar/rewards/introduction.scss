@@ -1,0 +1,39 @@
+& {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+
+  > svg {
+    font-size: 3em;
+  }
+
+  h1 + svg, p + svg {
+    margin-top: 50px;
+  }
+
+  > h1:first-child {
+    margin-bottom: 20px;
+  }
+
+  > svg:first-child {
+    font-size: 4em;
+  }
+
+  > * {
+    line-height: 1.2em;
+    text-align: center;
+    max-width: 500px;
+  }
+
+  > * + * {
+    margin-top: 30px;
+  }
+
+  .slick-dots {
+    bottom: -35px;
+
+    button::before {
+      font-size: 25px;
+    }
+  }
+}

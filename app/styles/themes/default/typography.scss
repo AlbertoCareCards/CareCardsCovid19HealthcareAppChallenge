@@ -1,0 +1,46 @@
+// Set of all relevant font configurations in application
+// ------------------------------------------------------
+$font-families: (
+  'primary': "Helvetica Neue",
+  'secondary': "Rubik",
+);
+
+$font-sizes: (
+  'big-title': 2.6em,
+  'big': 2em,
+  'semi-big': 1.4em,
+  'normal': 1em,
+  'small': 0.8em,
+  'tiny': 0.4em,
+  'mini': 0.3em,
+
+  'phone-big-title': 2em,
+  'phone-big': 1.5em,
+  'phone-semi-big': 1em,
+  'phone-normal': 0.95em,
+  'phone-small': 0.7em,
+  'phone-tiny': 0.4em,
+  'phone-mini': 0.3em,
+
+  'small-phone-big-title': 1.9em,
+  'small-phone-big': 1.4em,
+  'small-phone-semi-big': 0.9em,
+  'small-phone-normal': 0.85em,
+  'small-phone-small': 0.6em,
+  'small-phone-tiny': 0.4em,
+  'small-phone-mini': 0.3em,
+);
+
+$font-weights: (
+  'normal': normal,
+  'bold': bold
+);
+
+$line-heights: (
+  'big': 1.5,
+  'normal': 1,
+
+  'phone-big': 1.4,
+
+  'small-phone-big': 1.3,
+)

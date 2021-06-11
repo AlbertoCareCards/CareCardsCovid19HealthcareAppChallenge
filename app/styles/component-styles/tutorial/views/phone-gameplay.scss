@@ -1,0 +1,135 @@
+& {
+  @extend .mind-gameplay-wrapper;
+
+  @media (min-width: phone-width-breakpoint()) {
+    visibility: hidden;
+  }
+
+  // Header
+  > h1:first-child {
+    margin-right: 40vw;
+    width: 50vw;
+    height: 52px;
+  }
+
+  .mind-answer {
+    padding: 5px 15px;
+    border-radius: 10px;
+    background: get-color('black-s1');
+    color: get-color('primary');
+    text-transform: uppercase;
+    display: inline-block;
+    height: 15px;
+  }
+
+  // Tutorial content (except top/bottom texts)
+  > .mind-flex-center {
+    flex-flow: column;
+
+    // Question Wrapper
+    > div:nth-child(2) {
+      @extend .mind-text;
+      @extend .mind-cah-border;
+      @extend .mind-flex-center;
+      width: 80vw;
+      max-width: 300px;
+      margin-top: 5px;
+      padding: 10px 5px;
+    }
+
+    // Card Game
+    > .mind-tutorial-card {
+      z-index: 1000;
+      margin-top: 20px;
+
+      p {
+        max-width: 80%;
+      }
+
+      p + p {
+        margin-top: 50%;
+      }
+
+      // Arrows logic
+      > div {
+        position: absolute;
+
+        &:first-of-type {
+          left: 10px;
+        }
+
+        &:last-of-type {
+          right: 10px;
+        }
+
+        > *:last-child {
+          margin-left: 5px;
+        }
+
+        > svg {
+          font-size: 35px;
+          color: get-color('black-s1');
+        }
+
+        > span {
+          @extend .mind-text;
+          @extend .mind-answer;
+        }
+      }
+
+      // Drag icon
+      svg:last-of-type {
+        bottom: 0;
+      }
+    }
+
+    // Underlying card
+    > .mind-tutorial-card + .mind-tutorial-card {
+      z-index: 0;
+      position: absolute;
+      margin-right: 0;
+      margin-left: 0;
+      bottom: 0;
+
+      > h1 {
+        line-height: 1.2;
+      }
+
+      > svg {
+        font-size: 100px;
+        position: relative;
+      }
+
+      > h2 {
+        flex-flow: row;
+        margin-top: 10px;
+        color: get-color('black-s1');
+
+        > p {
+          margin: 0 10px;
+        }
+      }
+    }
+  }
+
+  // Phone Options
+  > div:last-child {
+    width: 80vw;
+    max-width: 300px;
+    height: 100px;
+    flex-flow: row;
+
+    > button {
+      flex: 1;
+      height: 55%;
+    }
+
+    > button + button {
+      margin-left: 15px;
+    }
+
+    > button svg {
+      font-size: 20px;
+    }
+  }
+}

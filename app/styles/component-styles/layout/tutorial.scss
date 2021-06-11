@@ -1,0 +1,14 @@
+// Scroller
+& {
+  overflow-y: auto;
+
+  // Tutorial elements
+  > div:first-child {
+    height: 350vh;
+    overscroll-behavior: contain;
+
+    @media (max-width: phone-width-breakpoint()) {
+      height: 500vh;
+    }
+  }
+}

@@ -1,0 +1,20 @@
+& {
+  @extend .mind-cover-parent;
+
+  > .slick-list > .slick-track > .slick-slide {
+    overflow-y: scroll;
+
+    > div:first-child {
+      @extend .mind-cover-window;
+      @extend .mind-flex-center;
+      background: get-color('primary');
+    }
+
+    @media (min-width: phone-width-breakpoint()) {
+      > div {
+        max-height: 100vh !important;
+        overflow: hidden;
+      }
+    }
+  }
+}

@@ -1,0 +1,106 @@
+& {
+  width: 80%;
+  margin: auto;
+
+  > div {
+    width: 100%;
+    padding-bottom: 30px;
+    border-left: 3px solid get-color('black-s1');
+
+    &:last-child {
+      border-left: none !important;
+    }
+
+    // Header
+    > div:first-child {
+      @extend .mind-flex-center;
+
+      flex-flow: row;
+      cursor: pointer;
+      justify-content: flex-start !important;
+      margin-top: -1px;
+
+      > p:first-child {
+        @extend .mind-flex-center;
+
+        width: 35px;
+        height: 35px;
+        margin-left: -19px;
+        margin-top: -5px;
+        color:get-color('primary');
+        background: get-color('black-s1');
+        border-radius: 100px;
+      }
+
+      > p:nth-child(2) {
+        flex: 1;
+        line-height: 1.4;
+        margin-left: 20px;
+        color: get-color('black');
+        border-bottom: 1px solid get-color('black');
+
+        > p {
+          color: get-color('black-s1')
+        }
+      }
+
+      > svg:last-child {
+        color: get-color('black-s1');
+        position: absolute;
+        font-size: 20px;
+        right: -20px;
+        top: 5px;
+      }
+    }
+
+    // Content
+    > div:last-child {
+      margin: 10px 0 0 38px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+
+      .ember-basic-dropdown-content {
+        bottom: 40px;
+      }
+
+      > * + * {
+        margin-top: 20px;
+      }
+
+      p {
+        @extend .mind-flex-space-between;
+
+        justify-content: flex-start !important;
+        align-items: flex-start !important;
+        color: get-color('black-s1');
+        line-height: 1.2;
+
+        > svg {
+          margin-right: 15px;
+        }
+      }
+
+      // Customization for options wrapper
+      .mind-options-wrapper {
+        @extend .mind-flex-space-between;
+        @extend .mind-small-text;
+
+        justify-content: flex-start !important;
+        flex-flow: row;
+
+        > * + * {
+          margin-left: 10px;
+        }
+
+        .ember-basic-dropdown > div:first-child {
+          height: 31px;
+        }
+
+        .mind-button {
+          height: 35px;
+        }
+      }
+    }
+  }
+}

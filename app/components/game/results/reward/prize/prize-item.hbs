@@ -1,0 +1,18 @@
+<div class="mind-cah-border mind-text mind-flex-space-between {{styleNamespace}} {{if selected "mind-selected" ""}}"
+     {{on "click" this.selectPrize}}>
+  <FaIcon @icon="{{icon}}"/>
+  <div>
+    <p class="mind-text">{{title}}</p>
+    <p class="mind-small-text">{{description}}</p>
+  </div>
+  {{#if selected}}
+    <FaIcon class="mind-cah-border" @icon="times"/>
+  {{else}}
+    <FaIcon class="mind-cah-border" @icon="shopping-cart"/>
+  {{/if}}
+
+  <div class="mind-flex-space-between">
+    <p class="mind-small-text">{{price}}CC</p>
+    <FaIcon @icon="coins"/>
+  </div>
+</div>

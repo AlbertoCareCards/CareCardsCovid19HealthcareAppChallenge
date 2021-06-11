@@ -1,0 +1,42 @@
+& {
+  pointer-events: none;
+  flex-flow: column;
+  position: fixed;
+  top: 0;
+
+  // Play + Tutorial Options
+  > div:last-child {
+    position: absolute;
+    z-index: 1;
+    top: 65vh;
+    display: flex;
+    flex-flow: column;
+    max-width: 90vw;
+
+    .mind-button {
+      pointer-events: all;
+    }
+
+    .mind-button + .mind-button {
+      margin-top: 10px;
+    }
+
+    &.mind-first-game {
+      flex-direction: column-reverse;
+
+      .mind-button + .mind-button {
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+
+      > .mind-button:first-child {
+        border: none !important;
+        width: 100%;
+        box-shadow: none !important;
+        opacity: 0.7;
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+}

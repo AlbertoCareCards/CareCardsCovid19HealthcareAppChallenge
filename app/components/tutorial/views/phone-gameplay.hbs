@@ -1,0 +1,86 @@
+<div class="{{styleNamespace}}">
+  <h1 class="mind-big-title lax"
+      data-lax-opacity={{lax-animator "fadeOutIn" @initialStep}}
+      data-lax-translate-y={{lax-animator "translateYUp" @initialStep '-20px' '0'}}>
+    {{t "desktopGameplay.intro"}}
+  </h1>
+
+  <div class="mind-flex-center">
+    <!-- MENU WITH ODD OPTION -->
+    <div class="lax"
+         data-lax-opacity={{lax-animator "fadeOutIn" (mult @initialStep 5)}}>
+      <p class="mind-text">{{t "desktopGameplay.readAnswer"}} <span class="mind-answer">{{t "desktopGameplay.readAnswerSpan"}}</span></p>
+      <div>
+      </div>
+    </div>
+
+    <!-- QUESTION WRAPPER -->
+    <div class="lax"
+         data-lax-opacity={{lax-animator "fadeOutIn" (mult @initialStep 3.5)}}>
+      {{t "desktopGameplay.readQuestion"}}
+    </div>
+
+    <!-- CARD GAME -->
+    <div class="mind-tutorial-card lax"
+         data-lax-opacity={{lax-animator "fadeOutIn" (mult @initialStep 1.5)}}
+         data-lax-translate-y={{lax-animator "translateYUp" (mult @initialStep 1.5) '20px' '0'}}
+         data-lax-translate-x={{lax-animator "translateXRightLeft" (mult @initialStep 8)}}>
+      <p class="mind-text lax"
+         data-lax-opacity={{lax-animator "fadeOutInSemiout" (mult @initialStep 1.5) (mult @initialStep 10)}}>
+        {{t "desktopGameplay.observeImage"}}
+      </p>
+      <p class="mind-text lax"
+         data-lax-opacity={{lax-animator "fadeOutIn" (mult @initialStep 7)}}>
+        {{t "desktopGameplay.drag"}} <span>{{t "desktopGameplay.answer"}}</span>
+      </p>
+
+      <div class="mind-flex-center lax"
+           data-lax-scale={{lax-animator "scale" (mult @initialStep 8)}}
+           data-lax-opacity={{lax-animator "fadeOutIn" (mult @initialStep 5)}}>
+        <FaIcon @icon="caret-left"/>
+        <span class="mind-text mind-answer">{{t "desktopGameplay.leftAnswer"}}</span>
+      </div>
+      <div class="mind-flex-center lax"
+           data-lax-scale={{lax-animator "scale" (mult @initialStep 9)}}
+           data-lax-opacity={{lax-animator "fadeOutIn" (mult @initialStep 5)}}>
+        <span class="mind-text mind-answer">{{t "desktopGameplay.rightAnswer"}}</span>
+        <FaIcon @icon="caret-right"/>
+      </div>
+
+      <FaIcon @icon="hand-point-up" class="mind-drag lax"
+              data-lax-opacity={{lax-animator "fadeOutInSemiout" (mult @initialStep 7) (mult @initialStep 10)}}/>
+    </div>
+
+    <!-- UNDERLYING CENTER CARD -->
+    <div class="mind-tutorial-card lax"
+         data-lax-opacity={{lax-animator "fadeOutIn" (mult @initialStep 11.5)}}
+         data-lax-translate-y={{lax-animator "translateYUp" (mult @initialStep 11.5) '20px' '0'}}>
+      <h1 class="mind-big-title lax"
+          data-lax-opacity={{lax-animator "fadeOutIn" (mult @initialStep 11.5)}}
+          data-lax-translate-y={{lax-animator "translateYUp" (mult @initialStep 11.5) '-20px' '0'}}>
+        {{t "desktopGameplay.repeat"}}
+      </h1>
+
+      <h2 class="mind-semi-big-text mind-flex-center lax"
+          data-lax-opacity={{lax-animator "fadeOutIn" (mult @initialStep 12.5)}}>
+        <FaIcon @icon="angle-double-left"/>
+        <p>{{t "desktopGameplay.play"}}</p>
+        <FaIcon @icon="angle-double-right"/>
+      </h2>
+    </div>
+  </div>
+
+  <!-- PHONE OPTIONS -->
+  <div class="mind-flex-center lax"
+       data-lax-opacity={{lax-animator "fadeOutIn" (mult @initialStep 5)}}>
+    <button class="mind-button">
+      <FaIcon @icon="backward"/>
+    </button>
+    <button class="mind-button">
+      <span class="mind-text mind-answer">{{t "desktopGameplay.oddAnswer"}}</span>
+    </button>
+    <button class="mind-button">
+      <FaIcon @icon="info-circle"/>
+    </button>
+  </div>
+</div>

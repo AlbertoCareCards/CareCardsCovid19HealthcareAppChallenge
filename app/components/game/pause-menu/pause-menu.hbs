@@ -1,0 +1,53 @@
+<div class="mind-game-modal {{styleNamespace}}">
+  <!-- HEADER -->
+  <div class="mind-flex-space-between">
+    <h1 class='mind-modal-logo'>
+      <p><img src="assets/images/common/illness-logo.png">Coronavirus</p>
+      {{t "welcome.header"}} <span>{{t "welcome.depression"}}</span>
+      <p><a href="mailto:info@care-cards.io"  rel='noopener noreferrer' target='_blank'>by CareCards</a></p>
+    </h1>
+
+    <div>
+      <button class="mind-button" {{on "click" this.resumeGame}}>
+        <FaIcon @icon="times"/>
+      </button>
+    </div>
+  </div>
+
+  <!-- RESULTS INFORMATION -->
+  <div>
+      <Common::Carousel @parent={{this}}
+                        @swipe={{false}}
+                        @accessibility={{false}}
+                        @reference="carousel">
+        <Game::PauseMenu::MenuOptions @changeSection={{action this.changeSection}}
+                                      @restartGame={{action this.restartGame}}
+                                      @cancelGame={{action this.cancelGame}}/>
+        <Common::Configuration/>
+        <Common::GameInformation/>
+      </Common::Carousel>
+  </div>
+
+  <!-- NAVIGATION OPTIONS -->
+  <div>
+    <hr>
+
+    <div>
+      <button class="mind-button {{if (eq section 0) 'mind-active'}}"
+        {{on "click" (fn this.changeSection 0)}}>
+        <FaIcon @icon="bars"/>
+      </button>
+      <button class="mind-button {{if (eq section 1) 'mind-active'}}"
+        {{on "click" (fn this.changeSection 1)}}>
+        <FaIcon @icon="cog"/>
+      </button>
+      <button class="mind-button {{if (eq section 2) 'mind-active'}}"
+        {{on "click" (fn this.changeSection 2)}}>
+        <FaIcon @icon="info-circle"/>
+      </button>
+    </div>
+
+    <p class="mind-disclaimer">{{deck.disclaimer}}</p>
+    <p class="mind-disclaimer">{{t "common.test-by"}}: <b><a href="{{deck.original.url}}" target="_blank">{{deck.original.bibliography}}</a></b></p>
+  </div>
+</div>

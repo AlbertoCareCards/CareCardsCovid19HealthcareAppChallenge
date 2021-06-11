@@ -1,0 +1,55 @@
+<div class="mind-card-dimensions mind-flex-center {{styleNamespace}}"
+     {{did-insert this.revealAnswersAndSetTimeout}}>
+  <!-- ARROWS -->
+  {{#if leftAnswer}}
+    <div class="mind-phone-answer-small-border mind-flex-center {{if (eq leftAnswer.answer selectedAnswer.answer) "mind-selected"}}"
+         {{ref this "leftAnswerDom"}}>
+      <FaIcon @icon="caret-left" class="mind-check"/>
+      <p class="mind-text">
+        {{leftAnswerCounter}} <span>{{leftAnswer.answer}}</span>
+      </p>
+    </div>
+  {{/if}}
+  {{#if rightAnswer}}
+    <div class="mind-phone-answer-small-border mind-flex-center {{if (eq rightAnswer.answer selectedAnswer.answer) "mind-selected"}}"
+         {{ref this "rightAnswerDom"}}>
+      <FaIcon @icon="caret-right" class="mind-check"/>
+      <p class="mind-text">
+        {{rightAnswerCounter}} <span>{{rightAnswer.answer}}</span>
+      </p>
+    </div>
+  {{/if}}
+  {{#if topAnswer}}
+    <div class="mind-phone-answer-small-border mind-flex-center {{if (eq topAnswer.answer selectedAnswer.answer) "mind-selected"}}"
+         {{ref this "topAnswerDom"}}>
+      <FaIcon @icon="caret-up" class="mind-check"/>
+      <p class="mind-text">
+        {{topAnswerCounter}} <span>{{topAnswer.answer}}</span>
+      </p>
+    </div>
+  {{/if}}
+  {{#if bottomAnswer}}
+    <div class="mind-phone-answer-small-border mind-flex-center {{if (eq bottomAnswer.answer selectedAnswer.answer) "mind-selected"}}"
+         {{ref this "bottomAnswerDom"}}>
+      <FaIcon @icon="caret-down" class="mind-check"/>
+      <p class="mind-text">
+        {{bottomAnswerCounter}} <span>{{bottomAnswer.answer}}</span>
+      </p>
+    </div>
+  {{/if}}
+
+  {{#if (and selectedAnswer (not showingAnswers))}}
+    <div class="mind-selected-answer mind-phone-answer-small-border mind-flex-center mind-selected">
+      <p class="mind-text"><span>{{selectedAnswer.answer}}</span></p>
+    </div>
+  {{/if}}
+
+  <div class="mind-cah-border mind-flex-center"
+      {{on "click" this.toggleAnswers}}>
+    {{#if showingAnswers}}
+      <FaIcon @icon="eye" class="mind-check"/>
+    {{else}}
+      <FaIcon @icon="eye-slash" class="mind-check"/>
+    {{/if}}
+  </div>
+</div>

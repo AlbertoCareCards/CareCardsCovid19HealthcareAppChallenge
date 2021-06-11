@@ -1,0 +1,78 @@
+<div class="mind-result {{styleNamespace}}">
+  <h1>
+    <p class="mind-semi-big-text">{{score}}/{{maxScore}}</p>
+
+    <div class="mind-progress-bar">
+      <div style="width: {{scoreBarProgress}}%"></div>
+    </div>
+  </h1>
+
+  <h1 class="mind-big-text">{{t "results.your-score"}}</h1>
+
+  <hr>
+
+  <h2 class="mind-semi-big-text">{{t "results.score-how-to"}}</h2>
+
+  <p class="mind-text">
+    {{t "results.score-how-to-description"}}
+  </p>
+
+  <table class="mind-cah-border mind-text" cellspacing="0" cellpadding="0">
+    <tr>
+      <th>{{t "results.total-score"}}</th>
+      <th>{{t "results.assessment"}}</th>
+    </tr>
+    {{#each deck.results as |result|}}
+      <tr>
+        <td>{{result.condition}}</td>
+        <td>{{result.header}}</td>
+      </tr>
+    {{/each}}
+  </table>
+
+  <table class="mind-cah-border mind-text">
+    <tr>
+      <th>{{t "results.answer-word"}}</th>
+      <th>{{t "results.score-word"}}</th>
+    </tr>
+    {{#each deck.answers as |answer|}}
+      <tr>
+        <td>{{answer.answer}}</td>
+        <td>{{answer.score}}</td>
+      </tr>
+    {{/each}}
+  </table>
+
+  <p class="mind-text">
+    {{t "results.score-details-header"}}
+  </p>
+
+  <Common::Carousel @parent={{this}}
+                    @dots={{true}}
+                    @slidesToShow={{1}}
+                    @variableWidth={{true}}
+                    @reference="carousel">
+    {{#each playedCards as |card|}}
+      <Game::Results::CardReport @card={{card}}/>
+    {{/each}}
+  </Common::Carousel>
+
+  <p class="mind-text">
+    {{t "results.score-details-description"}}
+  </p>
+
+  <div class="mind-options-wrapper">
+    <Common::Dropdown @options={{options}}
+                      @onChangeCallback={{this.selectLanguage}}
+                      @placeholder="common.select-language"/>
+    <button class="mind-button {{if (not selectedLanguage) "mind-disabled"}}">
+      {{t "results.download-report"}}
+    </button>
+  </div>
+
+  <hr>
+
+  <button class="mind-button mind-small-text" {{on "click" returnToMenu}}>
+    back to follow ups
+  </button>
+</div>

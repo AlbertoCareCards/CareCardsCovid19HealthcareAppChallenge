@@ -1,0 +1,67 @@
+& {
+  width: 100%;
+  max-width: 500px;
+  cursor: pointer;
+  margin: auto;
+
+  &.mind-locked {
+    opacity: 0.5;
+  }
+
+  &.mind-completed {
+    svg, div {
+      color: get-color('white');
+      background: get-color('black-s1');
+    }
+  }
+
+  svg {
+    font-size: 1em;
+    padding: 10px;
+  }
+
+  hr {
+    flex: 1;
+    background: get-color('black-s1');
+    height: 2px;
+  }
+
+  > div {
+    width: 80%;
+    max-width: 75%;
+    text-align: center;
+    flex-flow: column;
+    min-height: 62px;
+    padding: 10px 20px;
+
+    p + p {
+      margin-top: 5px;
+    }
+
+    @media (max-width: phone-width-breakpoint()) {
+      max-width: 60%;
+
+      > div {
+        position: relative !important;
+        justify-content: center !important;
+      }
+    }
+
+    > div {
+      position: absolute;
+      top: 5px;
+      right: 5px;
+      padding: 5px 10px;
+      border-radius: 5px;
+
+      > p {
+        margin-right: 5px;
+      }
+
+      > svg {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}

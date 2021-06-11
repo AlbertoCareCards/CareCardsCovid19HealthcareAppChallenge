@@ -1,0 +1,38 @@
+// SET OF COMMON BORDERS
+// ---------------------
+.mind-cah-border {
+  border-radius: get-common('answer-border-radius') !important;
+  border: 2px solid get-color('black-s1') !important;
+  box-shadow: inset 0 -4px 0 0 get-color('black-s1') !important;
+}
+
+.mind-cah-small-border {
+  border-radius: get-common('answer-border-radius');
+  border: 1px solid get-color('black-s1');
+  box-shadow: inset 0 -2px 0 0 get-color('black-s1');
+}
+
+.mind-answer-border {
+  border-radius: get-common('answer-border-radius');
+  border: 3px dashed get-color('black-s2');
+}
+
+.mind-phone-answer-small-border {
+  border-radius: get-common('answer-border-radius');
+  border: 3px solid get-color('black-s1');
+}
+
+.mind-paper-border {
+  // Card effect for shadows
+  box-shadow:
+    /* The top layer shadow */
+    0 1px 1px rgba(0,0,0,0.35),
+      /* The second layer */
+    0 10px 0 -5px #eee,
+      /* The second layer shadow */
+    0 10px 1px -4px rgba(0,0,0,0.15),
+      /* The third layer */
+    0 20px 0 -10px #eee,
+      /* The third layer shadow */
+    0 20px 1px -9px rgba(0,0,0,0.15);
+}

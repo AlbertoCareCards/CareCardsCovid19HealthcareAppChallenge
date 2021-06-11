@@ -1,0 +1,9 @@
+& {
+  height: 100%;
+
+  > h1 {
+    max-width: 80%;
+    text-align: center;
+    color: get-color('black-s1');
+  }
+}

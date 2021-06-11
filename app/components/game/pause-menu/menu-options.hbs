@@ -1,0 +1,14 @@
+<div class="mind-flex-center {{styleNamespace}}">
+  <h2 class="mind-button" {{on "click" (fn this.selectSection 1)}}>
+    {{t 'pause-menu.configuration'}}
+  </h2>
+  <h2 class="mind-button" {{on "click" (fn this.selectSection 2)}}>
+    {{t 'pause-menu.information'}}
+  </h2>
+  <h2 class="mind-button" {{on "click" this.resetGame}}>
+    {{t 'pause-menu.reset'}}
+  </h2>
+  <h2 class="mind-button" {{on "click" this.quitGame}}>
+    {{t 'pause-menu.quit'}}
+  </h2>
+</div>
