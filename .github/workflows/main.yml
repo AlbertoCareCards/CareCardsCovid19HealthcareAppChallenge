@@ -46,3 +46,10 @@ jobs:
         
       - name: Build project
         run: npm run build -p
+      
+      - name: Deliver project build to azure
+        uses: bacongobbler/azure-blob-storage-upload@v1.2.0
+        with:
+          container_name: '$web'
+          connection_string: ${{ secrets.AZURE_CONNECTION_STRING }}
+          sync: true
