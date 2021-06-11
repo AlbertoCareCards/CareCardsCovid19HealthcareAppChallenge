@@ -40,3 +40,9 @@ jobs:
       
       - name: Check Ember CLI installation
         run: ember -v
+
+      - name: Install Ember dependencies
+        run: npm install
+        
+      - name: Build project
+        run: ember build -p
