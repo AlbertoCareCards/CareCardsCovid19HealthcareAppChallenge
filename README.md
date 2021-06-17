@@ -1,4 +1,4 @@
-# CareCards - Web Application
+# CareCards - 
 This Ember.js web application is a stable version of CareCards card game for web-browsers.
 
 ## Instructions
