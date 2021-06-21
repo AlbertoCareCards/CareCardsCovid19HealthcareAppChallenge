@@ -36,9 +36,10 @@
                               @initialSelection={{selectedLanguage}}
                               @onChangeCallback={{this.selectLanguage}}
                               @placeholder="common.select-language"/>
-            <button class="mind-button {{if (not selectedLanguage) "mind-disabled"}}">
+            <a class="mind-button {{if (not selectedLanguage) "mind-disabled"}}"
+               href="assets/docs/sample_results.pdf" download>
               {{t "results.download-report"}}
-            </button>
+            </a>
           </div>
         {{/if}}
       </div>
