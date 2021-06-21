@@ -37,6 +37,7 @@
                               @onChangeCallback={{this.selectLanguage}}
                               @placeholder="common.select-language"/>
             <a class="mind-button {{if (not selectedLanguage) "mind-disabled"}}"
+               {{on 'click' this.downloadReport}}
                href="assets/docs/sample_results.pdf" download>
               {{t "results.download-report"}}
             </a>

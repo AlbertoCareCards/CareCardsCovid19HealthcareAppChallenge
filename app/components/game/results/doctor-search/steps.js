@@ -19,4 +19,12 @@ export default class Steps extends Component {
       stepContent.style.maxHeight = stepContent.scrollHeight + "px";
     }
   }
+  
+  @action
+  downloadReport() {
+    var link = document.createElement("a");
+    link.download = 'assets/docs/sample_results.pdf';
+    link.href = 'assets/docs/sample_results.pdf';
+    link.click();
+  }
 }
