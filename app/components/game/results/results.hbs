@@ -5,14 +5,14 @@
 
   <!-- RESULTS INFORMATION -->
   <div>
-    {{#if (and score result)}}
+    {{#if (and (and score result) availableAchievements)}}
       <Common::Carousel @parent={{this}}
                         @swipe={{false}}
                         @accessibility={{false}}
                         @reference="carousel">
         <Game::Results::Score @score={{this.score}}
                               @result={{this.result}}
-                              @achievements={{achievements}}
+                              @achievements={{this.availableAchievements}}
                               @changeSection={{action this.changeSection}}/>
         <Game::Results::Report @deck={{@deck}}
                                @score={{this.score}}

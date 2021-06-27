@@ -83,6 +83,7 @@ const coronaAnxietyEN = {
   ],
   followUps: {
     doctorSearch: {
+      minScore: 10,
       usa: {
         title: "USA",
         payload: {

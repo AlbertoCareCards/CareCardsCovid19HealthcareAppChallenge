@@ -27,6 +27,16 @@
     select any of the available follow up resources:
   </p>
 
+  {{#if (lt score 10)}}
+    <p class="mind-text">
+      <b style="text-decoration: underline">
+        Find Help via HCL SDK feature is only available to results with a score of 10 points
+        or higher. You can know more about the result scores and follow ups via the follow up
+        "Learn about your results".
+      </b>
+    </p>
+  {{/if}}
+
   {{#each achievements as |achievement|}}
     <Common::Reward::Achievement @id={{achievement.id}}
                                  @unlocked={{achievement.unlocked}}

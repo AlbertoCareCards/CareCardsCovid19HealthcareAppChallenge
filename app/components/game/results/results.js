@@ -74,6 +74,10 @@ export default class Results extends Component {
   get result() {
     return this.findResult(this.deck.results, this.score);
   }
+  
+  get availableAchievements() {
+    return this.achievements.filter((a) => !a.minScore || a.minScore <= this.score);
+  }
 
   @action
   changeSection(sectionIndex) {

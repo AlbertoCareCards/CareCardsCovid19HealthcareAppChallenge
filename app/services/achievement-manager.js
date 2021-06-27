@@ -9,7 +9,7 @@ const coronaAnxietyEN = [
     howToUnlock: "Complete the game by playing all cards",
     unlocked: true,
     unlocks: [2, 3, 4],
-    points: 20
+    points: 20,
   },
   {
     id: 2,
@@ -36,7 +36,8 @@ const coronaAnxietyEN = [
     description: "Discover the specialist in your area that can help you deal with anxiety",
     howToUnlock: "Find specialist nearby",
     unlocked: false,
-    points: 30
+    points: 30,
+    minScore: 10
   }
 ];
 
